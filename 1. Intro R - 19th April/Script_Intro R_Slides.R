@@ -119,6 +119,7 @@ x
 x>0 
 y<-x>0 
 x[y] # or x[x>0] 
+y
 x[x<=-2|x>5] 
 x[x<15 & x>2] 
 x[c(3,7)] 
@@ -237,10 +238,6 @@ ncol(patients.inform)
 patients.inform$weight<-c(100,62,80,75,55)
 patients.inform
 
-other.df<-data.frame()
-other.df<-edit(other.df)
-other.df
-
 
 # 4. Import and export files
 # ---------------------------
@@ -248,12 +245,13 @@ other.df
 # Access to a specific package
 
 data()
-data(package="Biobase")
-data(geneCov,package="Biobase")
+data(package="lattice")
+data(ethanol,package="lattice")
 
-library(Biobase) 
-data()
-data(geneCov)
+library(lattice) 
+data(ethanol)
+ethanol
+?ethanol
 
 
 # 5. Graphical functions
@@ -309,6 +307,16 @@ for(i in 1:length(x)) {
 if(x[i] < 5) z <- c(z, x[i] - 1)
 else z <- c(z, 100) }
 z
+
+# or
+
+x<-c(3,5,6,1,2,4)
+z <- 1:6
+for(i in 1:length(x)) {
+  if(x[i] < 5) z[i] <- x[i]-1
+  else z[i] <- 100 }
+z
+
 
 # Function while()
 
