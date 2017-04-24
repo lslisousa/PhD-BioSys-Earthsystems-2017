@@ -78,6 +78,7 @@ table(sex)
 
 table(sex, tanner) 
 
+table(menarche,sex,tanner)
 
 # -------------------------
 # Graphical Representations
@@ -143,13 +144,13 @@ boxplot(igf1,horizontal=T,col="magenta")
 boxplot(igf1,col="pink",main="IGF-1",sub=paste("Total:",length(igf1),"\n","NA:",sum(is.na(igf1))))
 
 par(mfrow=c(1,1))
-boxplot(age~menarche,col="orange",main="Box Plot of age, per menarche (No/Yes)",ylab="IDADE")
+boxplot(age~menarche,col=c("salmon","cyan"),main="Box Plot of age, per menarche (No/Yes)",ylab="AGE",names=c("No","Yes"))
 
 
 # Quantile-Quantile Plot
 # -----------------------
 
-qqnorm(igf1,main="Q-Q Plot para IGF-1")
+qqnorm(igf1,main="Q-Q Plot (Normal) for IGF-1")
 qqline(igf1,col="blue")
 
 
